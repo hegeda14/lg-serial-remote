@@ -1,7 +1,7 @@
 {
-    "uuid": "lg-serial-remote@cinnamon.org",
+    "uuid": "lg-serial-remote@hegeda14",
     "name": "LG Serial Remote",
-    "description": "LG TV/monitor vezérlése soros porton keresztül.",
+    "description": "LG TV/monitor control via serial port.",
     "icon": "remote",
     "max-instances": "-1"
 }

@@ -15,7 +15,7 @@ LGSerialRemote.prototype = {
         Applet.IconApplet.prototype._init.call(this, orientation, panel_height, instance_id);
 
         this.set_applet_icon_name("monitor");
-        this.set_applet_tooltip(_("LG TV/monitor - Parancs küldése"));
+        this.set_applet_tooltip(_("LG TV/monitor - Send command"));
 
         this.menuManager = new PopupMenu.PopupMenuManager(this);
         this.menu = new Applet.AppletPopupMenu(this, orientation);
@@ -24,52 +24,52 @@ LGSerialRemote.prototype = {
         this._contentSection = new PopupMenu.PopupMenuSection();
         this.menu.addMenuItem(this._contentSection);
 
-        let item = new PopupMenu.PopupMenuItem("Bekapcsolás");
+        let item = new PopupMenu.PopupMenuItem("Turn on");
         item.connect('activate', Lang.bind(this, function() {
             Util.spawnCommandLine(`/usr/bin/python3 ${__dirname}/libLGTV_serial/LGTV.py --poweron`);
-            Util.spawnCommandLine(`notify-send --icon=monitor --hint=int:transient:1 "LG Serial Remote" "Bekapcsolás parancs elküldve!"`);
+            Util.spawnCommandLine(`notify-send --icon=monitor --hint=int:transient:1 "LG Serial Remote" "Turn on command sent!"`);
         }));
         this.menu.addMenuItem(item);
 
-        item = new PopupMenu.PopupMenuItem("Kikapcsolás");
+        item = new PopupMenu.PopupMenuItem("Turn off");
         item.connect('activate', Lang.bind(this, function() {
             Util.spawnCommandLine(`/usr/bin/python3 ${__dirname}/libLGTV_serial/LGTV.py --poweroff`);
-            Util.spawnCommandLine(`notify-send --icon=monitor --hint=int:transient:1 "LG Serial Remote" "Kikapcsolás parancs elküldve!"`);
+            Util.spawnCommandLine(`notify-send --icon=monitor --hint=int:transient:1 "LG Serial Remote" "Turn off command sent!"`);
         }));
         this.menu.addMenuItem(item);
 
         item = new PopupMenu.PopupMenuItem("DVI");
         item.connect('activate', Lang.bind(this, function() {
             Util.spawnCommandLine(`/usr/bin/python3 ${__dirname}/libLGTV_serial/LGTV.py --inputdvi`);
-            Util.spawnCommandLine(`notify-send --icon=monitor --hint=int:transient:1 "LG Serial Remote" "DVI bemenetválasztás parancs elküldve!"`);
+            Util.spawnCommandLine(`notify-send --icon=monitor --hint=int:transient:1 "LG Serial Remote" "DVI input change command sent!"`);
         }));
         this.menu.addMenuItem(item);
 
         item = new PopupMenu.PopupMenuItem("VGA");
         item.connect('activate', Lang.bind(this, function() {
             Util.spawnCommandLine(`/usr/bin/python3 ${__dirname}/libLGTV_serial/LGTV.py --inputvga`);
-            Util.spawnCommandLine(`notify-send --icon=monitor --hint=int:transient:1 "LG Serial Remote" "VGA bemenetválasztás parancs elküldve!"`);
+            Util.spawnCommandLine(`notify-send --icon=monitor --hint=int:transient:1 "LG Serial Remote" "VGA input change command sent!"`);
         }));
         this.menu.addMenuItem(item);
 
         item = new PopupMenu.PopupMenuItem("HDMI");
         item.connect('activate', Lang.bind(this, function() {
             Util.spawnCommandLine(`/usr/bin/python3 ${__dirname}/libLGTV_serial/LGTV.py --inputhdmi`);
-            Util.spawnCommandLine(`notify-send --icon=monitor --hint=int:transient:1 "LG Serial Remote" "HDMI bemenetválasztás parancs elküldve!"`);
+            Util.spawnCommandLine(`notify-send --icon=monitor --hint=int:transient:1 "LG Serial Remote" "HDMI input change command sent!"`);
         }));
         this.menu.addMenuItem(item);
 
         item = new PopupMenu.PopupMenuItem("AV1");
         item.connect('activate', Lang.bind(this, function() {
             Util.spawnCommandLine(`/usr/bin/python3 ${__dirname}/libLGTV_serial/LGTV.py --inputav1`);
-            Util.spawnCommandLine(`notify-send --icon=monitor --hint=int:transient:1 "LG Serial Remote" "AV1 bemenetválasztás parancs elküldve!"`);
+            Util.spawnCommandLine(`notify-send --icon=monitor --hint=int:transient:1 "LG Serial Remote" "AV1 input change command sent!"`);
         }));
         this.menu.addMenuItem(item);
 
         item = new PopupMenu.PopupMenuItem("AV2");
         item.connect('activate', Lang.bind(this, function() {
             Util.spawnCommandLine(`/usr/bin/python3 ${__dirname}/libLGTV_serial/LGTV.py --inputav2`);
-            Util.spawnCommandLine(`notify-send --icon=monitor --hint=int:transient:1 "LG Serial Remote" "AV2 bemenetválasztás parancs elküldve!"`);
+            Util.spawnCommandLine(`notify-send --icon=monitor --hint=int:transient:1 "LG Serial Remote" "AV2 input change command sent!"`);
         }));
         this.menu.addMenuItem(item);
     },
