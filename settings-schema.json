@@ -1,0 +1,38 @@
+{
+    "layout": {
+    "type": "layout",
+    "pages": [
+        "page_Settings"
+    ],
+    "page_Settings": {
+    "type": "page",
+    "title": "⚙ General",
+    "sections": [
+        "section_info",
+        "section_libLGTV_serial"
+    ]
+    },
+    "section_info": {
+        "type": "section",
+        "title": "🛈 Info",
+        "keys": ["label-info"]
+    },
+    "section_libLGTV_serial": {
+        "type": "section",
+        "title": "libLGTV_serial",
+        "keys": [
+            "file-select"
+        ]
+    }
+    },
+    "file-select" : {
+        "type" : "filechooser",
+        "description" : "Please, browse for LGTV.py",
+        "default" : "",
+        "select-dir" : false
+    },
+    "label-info" : {
+        "type" : "label",
+        "description" : "<a href='Test'>Test</a>"
+    }
+}
